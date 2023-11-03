@@ -17,8 +17,8 @@ export default function CreateEmployee() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // console.log(inputs);
-        axios.post('http://localhost/reactapi/', inputs).then(function(response){
-        // console.log(response.data.Success);
+        axios.post('http://localhost/ems/reactapi/', inputs).then(function(response){
+        console.log(response.data.Success);
         if(response.data.Success)
         {
             alert(response.data.Success);

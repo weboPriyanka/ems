@@ -18,10 +18,10 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
 	case 'GET':
 	$path = explode('/', $_SERVER['REQUEST_URI']);
-	if(isset($path[3]) && is_numeric($path[3]))
+	if(isset($path[4]) && is_numeric($path[4]))
 	{
 		$json_array = array();
-		$employee_id = $path[3];
+		$employee_id = $path[4];
 		$getuserrow = mysqli_query($db_conn, "SELECT * FROM employee WHERE id='$employee_id' ");
 		while ($userrow = mysqli_fetch_array($getuserrow)) 
 		{
@@ -101,7 +101,7 @@ switch ($method) {
 
 	case "DELETE" :
 		$path = explode('/', $_SERVER['REQUEST_URI']);
-		$employee_id = $path[3];
+		$employee_id = $path[4];
 		// echo "<pre>"; print_r($employee_id); die();
 		$result = mysqli_query($db_conn, "DELETE FROM `employee` WHERE `id`='$employee_id' ");
 		if ($result) 

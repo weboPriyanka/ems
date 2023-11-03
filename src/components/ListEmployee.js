@@ -13,14 +13,14 @@ export default function ListEmployee() {
     }, []);
 
     function getUsers() {
-        axios.get('http://localhost/reactapi/').then(function(response) {
+        axios.get('http://localhost/ems/reactapi/').then(function(response) {
             console.log(response.data);
             setEmployees(response.data);
         });
     }
 
     const deleteUser = (id) => {
-        axios.delete(`http://localhost/reactapi/index.php/${id}`).then(function(response){
+        axios.delete(`http://localhost/ems/reactapi/index.php/${id}`).then(function(response){
         console.log(response.data);
         if(response.data.Success)
         {

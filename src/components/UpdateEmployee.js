@@ -11,7 +11,7 @@ export default function UpdateEmployee() {
         getUser();
     }, []);
     function getUser() {
-        axios.get(`http://localhost/reactapi/index.php/${id}`).then(function(response) {
+        axios.get(`http://localhost/ems/reactapi/index.php/${id}`).then(function(response) {
             console.log(response.data);
             setInputs(response.data);
         });
@@ -27,7 +27,7 @@ export default function UpdateEmployee() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // console.log(inputs);
-        axios.put('http://localhost/reactapi/', inputs).then(function(response){
+        axios.put('http://localhost/ems/reactapi/', inputs).then(function(response){
         console.log(response.data);
         if(response.data.Success)
         {
